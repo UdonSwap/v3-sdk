@@ -8,13 +8,13 @@ To run the tests, follow these steps. You must have at least node v10 and [yarn]
 First clone the repository:
 
 ```sh
-git clone https://github.com/UdonSwap/core-sdk
+git clone https://github.com/UdonSwap/V3-SDK
 ```
 
 Move into the uniswap-sdk working directory
 
 ```sh
-cd core-sdk/
+cd v3-sdk/
 ```
 
 Install dependencies
