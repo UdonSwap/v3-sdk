@@ -195,7 +195,9 @@ export abstract class NonfungiblePositionManager {
       value: toHex(0)
     }
   }
-  udonswap-core-eaterThan(position.liquidity, ZERO), 'ZERO_LIQUIDITY')
+
+  public static addCallParameters(position: Position, options: AddLiquidityOptions): MethodParameters {
+    invariant(JSBI.greaterThan(position.liquidity, ZERO), 'ZERO_LIQUIDITY')
 
     const calldatas: string[] = []
 
