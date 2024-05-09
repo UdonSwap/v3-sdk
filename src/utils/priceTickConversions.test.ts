@@ -1,4 +1,4 @@
-import { Price, Token } from 'udonswap-sdk-core'
+import { Price, Token } from 'udonswap-core'
 import { tickToPrice } from './index'
 import { priceToClosestTick } from './priceTickConversions'
 

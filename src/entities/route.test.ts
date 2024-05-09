@@ -1,4 +1,4 @@
-import { Ether, Token, WETH9 } from 'udonswap-sdk-core'
+import { ETHER, Token, WETH9 } from 'udonswap-core'
 import { FeeAmount } from '../constants'
 import { encodeSqrtRatioX96 } from '../utils/encodeSqrtRatioX96'
 import { TickMath } from '../utils/tickMath'
@@ -6,7 +6,7 @@ import { Pool } from './pool'
 import { Route } from './route'
 
 describe('Route', () => {
-  const ETHER = Ether.onChain(1)
+  const ETH = ETHER.onChain(1)
   const token0 = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0')
   const token1 = new Token(1, '0x0000000000000000000000000000000000000002', 18, 't1')
   const token2 = new Token(1, '0x0000000000000000000000000000000000000003', 18, 't2')
@@ -41,17 +41,17 @@ describe('Route', () => {
   })
 
   it('supports ether input', () => {
-    const route = new Route([pool_0_weth], ETHER, token0)
+    const route = new Route([pool_0_weth], ETH, token0)
     expect(route.pools).toEqual([pool_0_weth])
-    expect(route.input).toEqual(ETHER)
+    expect(route.input).toEqual(ETH)
     expect(route.output).toEqual(token0)
   })
 
   it('supports ether output', () => {
-    const route = new Route([pool_0_weth], token0, ETHER)
+    const route = new Route([pool_0_weth], token0, ETH)
     expect(route.pools).toEqual([pool_0_weth])
     expect(route.input).toEqual(token0)
-    expect(route.output).toEqual(ETHER)
+    expect(route.output).toEqual(ETH)
   })
 
   describe('#midPrice', () => {
@@ -126,9 +126,9 @@ describe('Route', () => {
     })
 
     it('correct for ether -> 0', () => {
-      const price = new Route([pool_0_weth], ETHER, token0).midPrice
+      const price = new Route([pool_0_weth], ETH, token0).midPrice
       expect(price.toFixed(4)).toEqual('0.3333')
-      expect(price.baseCurrency.equals(ETHER)).toEqual(true)
+      expect(price.baseCurrency.equals(ETH)).toEqual(true)
       expect(price.quoteCurrency.equals(token0)).toEqual(true)
     })
 
@@ -140,17 +140,17 @@ describe('Route', () => {
     })
 
     it('correct for ether -> 0 -> 1 -> weth', () => {
-      const price = new Route([pool_0_weth, pool_0_1, pool_1_weth], ETHER, weth).midPrice
+      const price = new Route([pool_0_weth, pool_0_1, pool_1_weth], ETH, weth).midPrice
       expect(price.toSignificant(4)).toEqual('0.009524')
-      expect(price.baseCurrency.equals(ETHER)).toEqual(true)
+      expect(price.baseCurrency.equals(ETH)).toEqual(true)
       expect(price.quoteCurrency.equals(weth)).toEqual(true)
     })
 
     it('correct for weth -> 0 -> 1 -> ether', () => {
-      const price = new Route([pool_0_weth, pool_0_1, pool_1_weth], weth, ETHER).midPrice
+      const price = new Route([pool_0_weth, pool_0_1, pool_1_weth], weth, ETH).midPrice
       expect(price.toSignificant(4)).toEqual('0.009524')
       expect(price.baseCurrency.equals(weth)).toEqual(true)
-      expect(price.quoteCurrency.equals(ETHER)).toEqual(true)
+      expect(price.quoteCurrency.equals(ETH)).toEqual(true)
     })
   })
 })

@@ -1,4 +1,4 @@
-import { MaxUint256 } from 'udonswap-sdk-core'
+import { MaxUint256 } from 'udonswap-core'
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import { ZERO } from '../internalConstants'

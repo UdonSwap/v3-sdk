@@ -1,4 +1,4 @@
-import { MaxUint256 } from 'udonswap-sdk-core'
+import { MaxUint256 } from 'udonswap-core'
 import JSBI from 'jsbi'
 import { ONE } from '../internalConstants'
 import { mostSignificantBit } from './mostSignificantBit'

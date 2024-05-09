@@ -1,6 +1,6 @@
 import invariant from 'tiny-invariant'
 
-import { Currency, Price, Token } from 'udonswap-sdk-core'
+import { Currency, Price, Token } from 'udonswap-core'
 import { Pool } from './pool'
 
 /**

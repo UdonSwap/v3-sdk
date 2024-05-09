@@ -1,4 +1,4 @@
-import { BigintIsh } from 'udonswap-sdk-core'
+import { BigintIsh } from 'udonswap-core'
 
 /**
  * Provides information about ticks

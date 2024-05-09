@@ -1,4 +1,4 @@
-import { Token } from 'udonswap-sdk-core'
+import { Token } from 'udonswap-core'
 import JSBI from 'jsbi'
 import { AllowedPermitArguments, SelfPermit, StandardPermitArguments } from './selfPermit'
 

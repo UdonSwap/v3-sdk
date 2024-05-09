@@ -1,4 +1,4 @@
-import { Percent, Token } from 'udonswap-sdk-core'
+import { Percent, Token } from 'udonswap-core'
 import JSBI from 'jsbi'
 import { Payments } from './payments'
 

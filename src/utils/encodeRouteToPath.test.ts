@@ -1,4 +1,4 @@
-import { Ether, Token, WETH9 } from 'udonswap-sdk-core'
+import { ETHER, Token, WETH9 } from 'udonswap-core'
 import { FeeAmount } from '../constants'
 import { Pool } from '../entities/pool'
 import { Route } from '../entities/route'
@@ -6,7 +6,7 @@ import { encodeRouteToPath } from './encodeRouteToPath'
 import { encodeSqrtRatioX96 } from './encodeSqrtRatioX96'
 
 describe('#encodeRouteToPath', () => {
-  const ETHER = Ether.onChain(1)
+  const ETH = ETHER.onChain(1)
   const token0 = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
   const token1 = new Token(1, '0x0000000000000000000000000000000000000002', 18, 't1', 'token1')
   const token2 = new Token(1, '0x0000000000000000000000000000000000000003', 18, 't2', 'token2')
@@ -22,10 +22,10 @@ describe('#encodeRouteToPath', () => {
   const route_0_1 = new Route([pool_0_1_medium], token0, token1)
   const route_0_1_2 = new Route([pool_0_1_medium, pool_1_2_low], token0, token2)
 
-  const route_0_weth = new Route([pool_0_weth], token0, ETHER)
-  const route_0_1_weth = new Route([pool_0_1_medium, pool_1_weth], token0, ETHER)
-  const route_weth_0 = new Route([pool_0_weth], ETHER, token0)
-  const route_weth_0_1 = new Route([pool_0_weth, pool_0_1_medium], ETHER, token1)
+  const route_0_weth = new Route([pool_0_weth], token0, ETH)
+  const route_0_1_weth = new Route([pool_0_1_medium, pool_1_weth], token0, ETH)
+  const route_weth_0 = new Route([pool_0_weth], ETH, token0)
+  const route_weth_0_1 = new Route([pool_0_weth, pool_0_1_medium], ETH, token1)
 
   it('packs them for exact input single hop', () => {
     expect(encodeRouteToPath(route_0_1, false)).toEqual(

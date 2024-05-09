@@ -6,7 +6,7 @@ import {
   validateAndParseAddress,
   Currency,
   NativeCurrency
-} from 'udonswap-sdk-core'
+} from 'udonswap-core'
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import { Position } from './entities/position'
@@ -195,9 +195,7 @@ export abstract class NonfungiblePositionManager {
       value: toHex(0)
     }
   }
-
-  public static addCallParameters(position: Position, options: AddLiquidityOptions): MethodParameters {
-    invariant(JSBI.greaterThan(position.liquidity, ZERO), 'ZERO_LIQUIDITY')
+  udonswap-core-eaterThan(position.liquidity, ZERO), 'ZERO_LIQUIDITY')
 
     const calldatas: string[] = []
 

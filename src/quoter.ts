@@ -1,5 +1,5 @@
 import { Interface } from '@ethersproject/abi'
-import { BigintIsh, Currency, CurrencyAmount, TradeType } from 'udonswap-sdk-core'
+import { BigintIsh, Currency, CurrencyAmount, TradeType } from 'udonswap-core'
 import { encodeRouteToPath, MethodParameters, toHex } from './utils'
 import IQuoter from '@uniswap/v3-periphery/artifacts/contracts/lens/Quoter.sol/Quoter.json'
 import IQuoterV2 from '@uniswap/swap-router-contracts/artifacts/contracts/lens/QuoterV2.sol/QuoterV2.json'
@@ -40,8 +40,8 @@ export abstract class SwapQuoter {
   /**
    * Produces the on-chain method name of the appropriate function within QuoterV2,
    * and the relevant hex encoded parameters.
-   * @template TInput The input token, either Ether or an ERC-20
-   * @template TOutput The output token, either Ether or an ERC-20
+   * @template TInput The input token, either ETHER or an ERC-20
+   * @template TOutput The output token, either ETHER or an ERC-20
    * @param route The swap route, a list of pools through which a swap can occur
    * @param amount The amount of the quote, either an amount in, or an amount out
    * @param tradeType The trade type, either exact input or exact output
