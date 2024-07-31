@@ -4403,10 +4403,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-lampros-core@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/lampros-core/-/lampros-core-1.3.0.tgz#97eec5f55fcc8b872966795519185f0503e94b6d"
-  integrity sha512-xj760HS9M+U3huVeFgI5SGGvkLXy9QFIWdOPRsRTN0EkpETUafCaJ2u9CXz8Nncy04E3qaXavWTeM6TnK/zSKw==
+lampros-core@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/lampros-core/-/lampros-core-1.4.0.tgz#a5e1d47f493e5ae6bcb6f7dabea3a928fc6f1ebe"
+  integrity sha512-cAFoIc4KgK1cbjrFF7ae8zK2T0HwjmLRhCVnOHF5Vd/tjUjNZuWDOKeH/EEzJto1Vd/nGNRQZhuwhOk31qLfmA==
   dependencies:
     "@ethersproject/address" "^5.0.2"
     big.js "^5.2.2"
